@@ -1,5 +1,3 @@
-
-
 op=1
 while op >=1 and op<=4:
     n1=input("Ingrese un numero\n")
