@@ -1,28 +1,59 @@
-op=1
-while op >=1 and op<=4:
-    n1=input("Ingrese un numero\n")
-    n1=float(n1)
-    n2=input("Ingrese otro numero\n")
-    n2=float(n2)
-    print ("Ingrese la operacion que desea realizar\n")
-    print ("1. Suma\n")
-    print ("2. Resta\n")
-    print ("3. Multiplicacion\n")
-    print ("4. Division\n")
-    print ("Cualquier otro numero terminara el codigo\n")
-    op=input()
-    op=int(op)
-    if op == 1:
-        resul=n1+n2
-        print("El resultado de la suma es: ", resul, "\n")
-    elif op == 2:
-        resul=n1-n2
-        print("El resultado de la resta es: ", resul, "\n")
-    elif op == 3:
-        resul=n1*n2
-        print("El resultado de la multiplicacion es: ", resul, "\n")
-    elif op == 4:
-        resul=n1/n2
-        print("El resultado de la division es: ", resul, "\n")
-else:
-    print ("Adios po\n")
+import time
+
+def bb(arr):
+    n = len(arr)
+
+    for i in range(n - 1):
+       
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]  
+
+def bbo(arr):
+    n = len(arr)
+    swapped = True
+
+    while swapped:
+        swapped = False
+        for i in range(1, n):
+            if arr[i - 1] > arr[i]:
+                arr[i - 1], arr[i] = arr[i], arr[i - 1]
+                swapped = True
+
+
+if __name__ == "__main__":
+    arr = []  
+    
+    n = int(input("Ingrese la cantidad de elementos en la lista: "))
+
+   
+    for i in range(n):
+        elemento = int(input(f"Ingrese el elemento {i + 1}: "))
+        arr.append(elemento)
+
+    while True:
+        print("\nSeleccione una opción:")
+        print("1. Ordenar utilizando Bubble Sort (normal)")
+        print("2. Ordenar utilizando Bubble Sort (optimizado)")
+        print("3. Salir")
+
+        opcion = int(input("Ingrese el número de la opción deseada: "))
+
+        if opcion == 1:
+            start_time = time.time()
+            bb(arr)
+            end_time = time.time()
+            print("Lista ordenada con Bubble Sort (normal):")
+            print(arr)
+            print(f"Tiempo de ejecución: {end_time - start_time} segundos")
+        elif opcion == 2:
+            start_time = time.time()
+            bbo(arr)
+            end_time = time.time()
+            print("Lista ordenada con burbuja optimizada:")
+            print(arr)
+            print(f"Tiempo de ejecución: {end_time - start_time} segundos")
+        elif opcion == 3:
+            break
+        else:
+            print("Opción no válida. Por favor, ingrese una opción válida.")
