@@ -4,10 +4,10 @@ def bb(arr):
     n = len(arr)
 
     for i in range(n - 1):
-        # En cada pasada, comparar elementos adyacentes y hacer el intercambio si es necesario
+       
         for j in range(0, n - i - 1):
             if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]  # Intercambio de elementos
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]  
 
 def bbo(arr):
     n = len(arr)
@@ -20,14 +20,13 @@ def bbo(arr):
                 arr[i - 1], arr[i] = arr[i], arr[i - 1]
                 swapped = True
 
-# Solicitar al usuario que ingrese los elementos de la lista
-if __name__ == "__main__":
-    arr = []  # Inicializar una lista vacía
 
-    # Pedir al usuario que ingrese la cantidad de elementos en la lista
+if __name__ == "__main__":
+    arr = []  
+    
     n = int(input("Ingrese la cantidad de elementos en la lista: "))
 
-    # Pedir al usuario que ingrese los elementos uno por uno
+   
     for i in range(n):
         elemento = int(input(f"Ingrese el elemento {i + 1}: "))
         arr.append(elemento)

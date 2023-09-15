@@ -45,7 +45,7 @@ def main():
             resultado = busqueda_lineal(lista, elemento)
             fin = time.time()
             if resultado != -1:
-                print(f"El elemento {elemento} se encuentra en la posición {resultado}.")
+                print(f"El elemento {elemento} se encuentra en la posición {resultado+1}.")
             else:
                 print(f"El elemento {elemento} no se encuentra en la lista.")
             print(f"Tiempo de ejecución de búsqueda lineal: {fin - inicio} segundos")
@@ -55,7 +55,7 @@ def main():
             resultado = busqueda_binaria(lista, elemento)
             fin = time.time()
             if resultado != -1:
-                print(f"El elemento {elemento} se encuentra en la posición {resultado}.")
+                print(f"El elemento {elemento} se encuentra en la posición {resultado+1}.")
             else:
                 print(f"El elemento {elemento} no se encuentra en la lista.")
             print(f"Tiempo de ejecución de búsqueda binaria: {fin - inicio} segundos")
